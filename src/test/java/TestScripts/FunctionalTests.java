@@ -6,7 +6,7 @@ import PageObjects.EditorPage;
 import PageObjects.TablesPage;
 import org.testng.annotations.Test;
 
-public class AlertsTest extends BaseClass {
+public class FunctionalTests extends BaseClass {
 
     @Test
     public void editTextBox() {

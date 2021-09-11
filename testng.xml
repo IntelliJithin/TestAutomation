@@ -6,7 +6,7 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="C:/NewFolder/src/test/java/TestScripts/AlertsTest.java">
         <classes>
-            <class name="TestScripts.AlertsTest">
+            <class name="TestScripts.FunctionalTests">
                 <methods>
                     <include name="dataTable"/>
                 </methods>
