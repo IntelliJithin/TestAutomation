@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Task_2_Automation_Functional_Testing</artifactId>
+    <artifactId>TestAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -41,6 +41,13 @@
             <version>2.5</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.3</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
