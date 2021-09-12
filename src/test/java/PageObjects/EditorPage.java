@@ -1,17 +1,13 @@
 package PageObjects;
 
 import Commons.BaseClass;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class EditorPage extends BaseClass {
-
-    @FindBy(id = "//iframe[@id=\"mce_0_ifr\"]")
-    private WebElement Editor_IFrame_TextBox;
-    @FindBy(id = "//body[@id=\"tinymce\"]")
-    private WebElement Editor_Body_TextBox;
 
     public EditorPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -23,5 +19,12 @@ public class EditorPage extends BaseClass {
         new Actions(driver).moveToElement(webElement).perform();
         driver.findElement(By.id("tinymce")).clear();
         driver.findElement(By.id("tinymce")).sendKeys("Adaptavist");
+    }
+
+    public String getText() {
+
+        String text = driver.findElement(By.id("tinymce")).getText();
+        return text;
+
     }
 }

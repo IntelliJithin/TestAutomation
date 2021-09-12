@@ -6,19 +6,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TablesPage extends BaseClass {
 
-    @FindBy(xpath = "//table[@id=\"table1\"]//tr[3]//td[4]")
-    private WebElement Tables_DataTable_Table;
+    @FindBy(xpath = "//table[@id=\"table1\"]//thead//tr//th[1]")
+    private WebElement DataTable_Table1_LastNameHeader_SortableTable;
+    @FindBy(xpath = "//table[@id=\"table1\"]//tbody//td[1]")
+    private List<WebElement> DataTable_Table1_LastNameList_SortableTable;
 
     public TablesPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void getTableData(){
-        System.out.println(Tables_DataTable_Table.getText());
+    public void clickTableHeader() {
+        DataTable_Table1_LastNameHeader_SortableTable.click();
     }
 
+    public ArrayList<String> getTableData() {
+
+        List<WebElement> LastNameList = DataTable_Table1_LastNameList_SortableTable;
+        ArrayList<String> tableValues = new ArrayList<>();
+        for (int i = 0; i < LastNameList.size(); i++) {
+            String str = LastNameList.get(i).getText();
+            tableValues.add(str);
+        }
+
+        return tableValues;
+    }
 }

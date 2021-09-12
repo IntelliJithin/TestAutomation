@@ -14,6 +14,24 @@ public class AlertsPage extends BaseClass {
     private WebElement Alerts_JSConfirm_Button;
     @FindBy(xpath = "//*[contains(text(), 'Click for JS Prompt')]")
     private WebElement Alerts_JSPrompt_Button;
+    @FindBy(id = "result")
+    private WebElement Alerts_JSAlert_Message_Text;
+    @FindBy(id = "result")
+    private WebElement Alerts_JSConfirm_Message_Text;
+    @FindBy(id = "result")
+    private WebElement Alerts_JSPrompt_Message_Text;
+
+    public String getJSAlertMessage(){
+        return Alerts_JSAlert_Message_Text.getText();
+    }
+
+    public String getJSConfirmMessage(){
+        return Alerts_JSConfirm_Message_Text.getText();
+    }
+
+    public String getJSPromptMessage(){
+        return Alerts_JSPrompt_Message_Text.getText();
+    }
 
     public AlertsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
